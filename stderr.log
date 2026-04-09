@@ -1,0 +1,132 @@
+[ERROR] [UID:1542][1160240] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[ERROR] [UID:1542][1160240] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[ERROR] [UID:1542][1161025] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[ERROR] [UID:1542][1161025] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[ERROR] [UID:1542][1161025] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[ERROR] [UID:1542][1186698] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[ERROR] [UID:1542][1186698] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/passenger_wsgi.py", line 15, in application
+    mensagem = f"Erro de Inicializacao: {str(e)}\nLocal: {os.path.dirname(__file__)}"
+                                             ^
+NameError: name 'e' is not defined
+[2026-04-09 13:02:10,757] ERROR in app: Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/main.py", line 16, in search_plate
+    print(f'Dados encontrados: {result}')
+UnicodeEncodeError: 'ascii' codec can't encode character '\xe3' in position 77: ordinal not in range(128)
+[2026-04-09 13:02:48,849] ERROR in app: Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/main.py", line 16, in search_plate
+    print(f'Dados encontrados: {result}')
+UnicodeEncodeError: 'ascii' codec can't encode character '\xe3' in position 77: ordinal not in range(128)
+200
+200
+[2026-04-09 13:08:30,060] ERROR in app: Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/main.py", line 16, in search_plate
+    print(f'Dados encontrados: {result}')
+UnicodeEncodeError: 'ascii' codec can't encode character '\xe3' in position 77: ordinal not in range(128)
+[2026-04-09 13:08:30,890] ERROR in app: Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/main.py", line 16, in search_plate
+    print(f'Dados encontrados: {result}')
+UnicodeEncodeError: 'ascii' codec can't encode character '\xe3' in position 77: ordinal not in range(128)
+[2026-04-09 13:09:39,900] ERROR in app: Exception on /search [GET]
+Traceback (most recent call last):
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/virtualenv/domains/carplateapi.bhcd.com.br/car_plate_api/3.11/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/link7586/domains/carplateapi.bhcd.com.br/car_plate_api/main.py", line 16, in search_plate
+    print(f'Dados encontrados: {result}')
+UnicodeEncodeError: 'ascii' codec can't encode character '\xe3' in position 77: ordinal not in range(128)
+200
+200
+200

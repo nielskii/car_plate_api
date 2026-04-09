@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Automotiva | Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.15) 0px, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f1f5f9;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #38bdf8;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        input {
+            flex: 1;
+            padding: 14px 18px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #38bdf8;
+        }
+
+        button {
+            padding: 0 24px;
+            background: #38bdf8;
+            border: none;
+            border-radius: 12px;
+            color: #0f172a;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background: #7dd3fc;
+            transform: translateY(-1px);
+        }
+
+        .results-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-card {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 12px 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .label {
+            color: #64748b;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .value {
+            font-size: 1rem;
+            color: #e2e8f0;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .featured {
+            border-left: 4px solid #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>CAR CHECKER</h1>
+        </header>
+        
+        <form id="carForm">
+            <input type="text" name="placa" placeholder="DIGITE A PLACA" required>
+            <button type="submit">BUSCAR</button>
+        </form>
+
+        <div class="results-grid">
+            <div class="info-card featured">
+                <span class="label">Marca / Modelo</span>
+                <span class="value" id="res-modelo">--</span>
+            </div>
+
+            <div class="row">
+                <div class="info-card">
+                    <span class="label">Ano Fab.</span>
+                    <span class="value" id="res-ano-fab">--</span>
+                </div>
+                <div class="info-card">
+                    <span class="label">Ano Modelo</span>
+                    <span class="value" id="res-ano-mod">--</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="info-card">
+                    <span class="label">Cor</span>
+                    <span class="value" id="res-cor">--</span>
+                </div>
+                <div class="info-card">
+                    <span class="label">Combustível</span>
+                    <span class="value" id="res-combustivel">--</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="info-card">
+                    <span class="label">UF</span>
+                    <span class="value" id="res-uf">--</span>
+                </div>
+                <div class="info-card">
+                    <span class="label">Município</span>
+                    <span class="value" id="res-municipio">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function buscarDados() {
+            const input = document.querySelector('input[name="placa"]');
+            const placa = input.value.trim().toUpperCase();
+            
+            if (!placa) return;
+
+            const url = `https://carplateapi.bhcd.com.br/search?p=${placa}`;
+
+            try {
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    throw new Error(`Erro: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                // Preenchendo usando IDs para evitar confusão de ordem
+                document.getElementById('res-modelo').innerText = `${data.marca} ${data.modelo}`;
+                document.getElementById('res-ano-fab').innerText = data.ano_fabricacao || "--";
+                document.getElementById('res-ano-mod').innerText = data.ano_modelo || "--";
+                document.getElementById('res-cor').innerText = data.cor || "--";
+                document.getElementById('res-combustivel').innerText = data.combustivel || "--";
+                document.getElementById('res-uf').innerText = data.uf || "--";
+                document.getElementById('res-municipio').innerText = data.municipio || "--";
+
+            } catch (error) {
+                alert("Erro ao buscar placa. Verifique o console.");
+                console.error("Houve um problema com a busca:", error);
+            }
+        }
+
+        document.getElementById('carForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            buscarDados();
+        });
+    </script>
+</body>
+</html>
