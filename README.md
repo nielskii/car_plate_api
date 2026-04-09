@@ -52,7 +52,7 @@ Para que a API capture a placa corretamente, o seu campo de entrada de texto **D
     "Modelo": "Corolla Altis 2.0 Flex",
     "Ano": "2023",
     "Cor": "Branco",
-    "Cidade": "Araxá - MG"
+    "Cidade": "São Paulo - SP"
   }
 }
 ````
